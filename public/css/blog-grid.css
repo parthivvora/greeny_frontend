@@ -1,0 +1,68 @@
+.blog-card {
+    margin: 0px 2.5px 30px
+}
+
+.blog-section .blog-grid .blog-desc {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.blog-section .blog-grid .abc a {
+    text-decoration: none;
+    color: black;
+}
+
+.blog-section .blog-grid .abc {
+    background-color: white;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0px 5px;
+}
+
+.blog-section .blog-grid .abc.active a {
+    background-color: #119744;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.blog-section .blog-grid .first,
+.blog-section .blog-grid .last {
+    display: none;
+}
+
+.blog-section .blog-grid .prev a::before {
+    content: "\f177";
+    font-family: FontAwesome;
+    font-size: 16px;
+}
+
+.blog-section .blog-grid .next a::before {
+    content: "\f178";
+    font-family: FontAwesome;
+    font-size: 16px;
+}
+@media (min-width: 421px) and (max-width: 767px) {
+    .blog-grid .container {
+        max-width: 420px
+    }
+}
+
+@media (max-width: 991px) {
+    .pagination {
+        margin-bottom: 30px
+    }
+}

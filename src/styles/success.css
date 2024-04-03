@@ -1,0 +1,49 @@
+/* body {
+  text-align: center;
+  padding: 40px 0;
+  background: #ebf0f5;
+} */
+h1 {
+  color: #88b04b;
+  font-family: "Nunito Sans", "Helvetica Neue", sans-serif;
+  font-weight: 900;
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+p {
+  color: #404f5e;
+  font-family: "Nunito Sans", "Helvetica Neue", sans-serif;
+  font-size: 20px;
+  margin: 0;
+}
+.checkMark {
+  color: #9abc66;
+  font-size: 80px;
+}
+
+.icon-circle {
+  border-radius: 50%;
+  height: 200px;
+  width: 200px;
+  background: rgb(248, 250, 245);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.payment-section {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 0;
+}
+.card {
+  background-color: rgb(255, 255, 255);
+  padding: 60px;
+  border-radius: 4px;
+  box-shadow: 0 2px 3px #c8d0d8;
+  width: 500px;
+  height: 500px;
+  justify-content: center;
+  align-items: center;
+}
