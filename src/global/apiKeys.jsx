@@ -1,4 +1,5 @@
-const BASE_URL = "http://localhost:7000/api/";
+// const BASE_URL = "http://localhost:7000/api/";
+const BASE_URL = "https://greeny-backend.vercel.app/api/";
 
 const apiTypes = {
   GET: "get",
