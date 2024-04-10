@@ -1,6 +1,6 @@
 import "../styles/blog-details.css";
 import React, { useCallback, useEffect, useState } from "react";
-import { IMAGEBASEURL_BLOG, imageConstant } from "../global/imageConstant";
+import { imageConstant } from "../global/imageConstant";
 import { useParams } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -28,6 +28,7 @@ function BlogDetails() {
       null
     )
       .then((response) => {
+        console.log("🚀 ~ .then ~ response:", response.data.blogData[0])
         setBlogData(response.data.blogData[0]);
       })
       .catch((error) => {
@@ -149,7 +150,7 @@ function BlogDetails() {
                   {blogData?.commentCount} Comments
                 </h3>
                 <ul className="comment-list">
-                  {blogData?.commentData.map((comment,index) => (
+                  {blogData?.commentData.map((comment, index) => (
                     <li
                       className="comment-item"
                       style={{

@@ -197,7 +197,7 @@ function ProductDetail() {
                 </li>
                 <li>
                   <a href="#tab-reve" className="tab-link" data-bs-toggle="tab">
-                    reviews (2)
+                    reviews ({getProduct?.totalReviews})
                   </a>
                 </li>
               </ul>
@@ -247,130 +247,38 @@ function ProductDetail() {
               <div className="col-lg-12">
                 <div className="product-details-frame">
                   <ul className="review-list">
-                    <li className="review-item">
-                      <div className="review-media">
-                        <a className="review-avatar" href="#">
-                          <img
-                            src={require("../images/avatar/01.jpg")}
-                            alt="review"
-                          />
-                        </a>
-                        <h5 className="review-meta">
-                          <a href="#">miron mahmud</a>
-                          <span>June 02, 2020</span>
-                        </h5>
-                      </div>
-                      <p className="review-desc">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Ducimus hic amet qui velit, molestiae suscipit
-                        perferendis, autem doloremque blanditiis dolores nulla
-                        excepturi ea nobis!
-                      </p>
-                      <form className="review-reply">
-                        <input type="text" placeholder="reply your thoughts" />
-                        <button>reply</button>
-                      </form>
-                      <ul className="review-reply-list">
-                        <li className="review-reply-item">
-                          <div className="review-media">
-                            <a className="review-avatar" href="#">
-                              <img
-                                src={require("../images/avatar/02.jpg")}
-                                alt="review"
-                              />
-                            </a>
-                            <h5 className="review-meta">
-                              <a href="#">labonno khan</a>
-                              <span>June 02, 2020</span>
-                            </h5>
-                          </div>
-                          <p className="review-desc">
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Ducimus hic amet qui velit, molestiae suscipit
-                            perferendis, autem doloremque blanditiis dolores
-                            nulla excepturi ea nobis!
-                          </p>
-                          <form className="review-reply">
-                            <input
-                              type="text"
-                              placeholder="reply your thoughts"
-                            />
-                            <button>reply</button>
-                          </form>
-                        </li>
-                        <li className="review-reply-item">
-                          <div className="review-media">
-                            <a className="review-avatar" href="#">
-                              <img
-                                src={require("../images/avatar/03.jpg")}
-                                alt="review"
-                              />
-                            </a>
-                            <h5 className="review-meta">
-                              <a href="#">tahmina bonny</a>
-                              <span>June 02, 2020</span>
-                            </h5>
-                          </div>
-                          <p className="review-desc">
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Ducimus hic amet qui velit, molestiae suscipit
-                            perferendis, autem doloremque blanditiis dolores
-                            nulla excepturi ea nobis!
-                          </p>
-                          <form className="review-reply">
-                            <input
-                              type="text"
-                              placeholder="reply your thoughts"
-                            />
-                            <button>reply</button>
-                          </form>
-                        </li>
-                      </ul>
-                    </li>
-                    <li className="review-item">
-                      <div className="review-media">
-                        <a className="review-avatar" href="#">
-                          <img
-                            src={require("../images/avatar/04.jpg")}
-                            alt="review"
-                          />
-                        </a>
-                        <h5 className="review-meta">
-                          <a href="#">shipu shikdar</a>
-                          <span>June 02, 2020</span>
-                        </h5>
-                      </div>
-                      <p className="review-desc">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Ducimus hic amet qui velit, molestiae suscipit
-                        perferendis, autem doloremque blanditiis dolores nulla
-                        excepturi ea nobis!
-                      </p>
-                      <form className="review-reply">
-                        <input type="text" placeholder="reply your thoughts" />
-                        <button>reply</button>
-                      </form>
-                    </li>
+                    {getProduct?.productReviewData?.map((review, index) => (
+                      <li
+                        className="review-item"
+                        key={index}
+                        style={{
+                          display: `${review?.isDeleted ? "none" : "block"}`,
+                        }}
+                      >
+                        <div className="review-media">
+                          <h5 className="review-meta">
+                            <span> {review?.name} </span>
+                            <span>
+                              {new Date(review?.createdAt).toLocaleString(
+                                "en-US",
+                                {
+                                  month: "long",
+                                  day: "numeric",
+                                  year: "numeric",
+                                }
+                              )}
+                            </span>
+                          </h5>
+                        </div>
+                        <p className="review-desc"> {review?.message} </p>
+                      </li>
+                    ))}
                   </ul>
                 </div>
                 <div className="product-details-frame">
                   <h3 className="frame-title">add your review</h3>
                   <form className="review-form">
                     <div className="row">
-                      <div className="col-lg-12">
-                        <div className="star-rating">
-                          <input type="radio" name="rating" id="star-1" />
-                          <label htmlFor="star-1" />
-                          <input type="radio" name="rating" id="star-2" />
-                          <label htmlFor="star-2" />
-                          <input type="radio" name="rating" id="star-3" />
-                          <label htmlFor="star-3" />
-                          <input type="radio" name="rating" id="star-4" />
-                          <label htmlFor="star-4" />
-                          <input type="radio" name="rating" id="star-5" />
-                          <label htmlFor="star-5" />
-                        </div>
-                      </div>
                       <div className="col-lg-12">
                         <div className="form-group">
                           <textarea
